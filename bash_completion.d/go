@@ -1,0 +1,40 @@
+#!/bin/bash
+function _go() {
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    if [ $COMP_CWORD -lt 2 ];then
+        cmd="go"
+    else
+        cmd=${COMP_WORDS[1]}
+    fi
+    case $cmd in
+        "go")
+            comms="build clean doc env fix fmt get install list run test tool version vet"
+            COMPREPLY=($(compgen -W "${comms}" -- ${cur}))
+            ;;
+        build|install|clean)
+            tmp="src/$cur"
+            tmp=${tmp%/}
+
+            if [ -d $tmp ]; then
+                ops=`compgen -f $tmp/*.go`
+                ops+=" `compgen -d $tmp/`"
+            elif [ -f $tmp ]; then
+                ops=$tmp
+            else
+                tmpdir=`dirname $tmp`
+                ops=`compgen -f $tmpdir/*.go`
+                ops+=" `compgen -d $tmpdir/`"
+            fi
+
+            ops="${ops//src\//}"
+            COMPREPLY=($(compgen -W "${ops}" -- ${cur}))
+            ;;
+        *)
+            _filedir
+            ;;
+    esac
+    return 0
+}
+
+complete -o nospace -F _go go
+
