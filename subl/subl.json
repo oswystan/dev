@@ -3,7 +3,7 @@
     "color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
     "create_window_at_startup": false,
     "font_face": "operator mono book",
-    "font_options": ["gray_antialias"],
+    "font_options": ["gray_antialias", "no_italic"],
     "open_files_in_new_window": false,
     "tab_size": 4,
     "font_size": 14,

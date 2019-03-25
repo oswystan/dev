@@ -93,7 +93,7 @@ au filetype javascript nmap <leader>f :call JsBeautify()<CR>
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 " trim spaces at end of line
-au filetype javascript,c,cpp,h,sh autocmd BufWritePre * :%s/\s\+$//e
+au filetype javascript,c,cpp,h,sh,markdown autocmd BufWritePre * :%s/\s\+$//e
 au filetype sh autocmd BufUnload * :!chmod u+x %
 
 " for tagbar

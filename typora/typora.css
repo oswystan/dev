@@ -103,6 +103,9 @@ q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #cccccc;
 }
 /* styles */
 
@@ -285,11 +288,20 @@ tfoot th {
 	text-transform: uppercase;
 }
 th {
-	text-align: left;
+	border-collapse: collapse;
+	border-spacing: 0;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #cccccc;
 }
 td {
 	vertical-align: top;
 	padding: .25em .25em .25em .4em;
+	border-collapse: collapse;
+	border-spacing: 0;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #cccccc;
 }
 
 code,
