@@ -86,6 +86,8 @@ nmap <leader>l :ls<CR>
 nmap <C-h> :vertical res +1<CR>
 nmap <C-l> :vertical res -1<CR>
 nmap <C-p> :cs find f 
+vmap <leader>e :Tabularize /=<CR>
+vmap <leader>c :Tabularize /:<CR>
 
 au filetype c,cpp,java,sh,javascript,python nmap <leader>t :TlistToggle<CR>
 au filetype javascript nmap <leader>f :call JsBeautify()<CR>
