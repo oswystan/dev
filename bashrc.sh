@@ -48,7 +48,11 @@ cltags()
 ## set terminal name
 ###################################
 tn() {
-    echo -en "\033]0;$1\a"
+    local name="Terminal"
+    if [[ $# -ne 0 ]]; then
+        name=$1
+    fi
+    echo -en "\033]0;$name\a"
 }
 
 ###################################
@@ -272,7 +276,5 @@ export PATH="${PATH}:${GOROOT}/bin:${GOPATH}/bin"
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US:en
 
-export PS1='\w> '
-export PS1='\w➜ '
-export PS1='\w➤ '
+export PS1='\u:\w>'
 ######################################################################
