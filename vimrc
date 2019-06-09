@@ -75,6 +75,7 @@ let g:C_FormatYear = '%Y'
 
 " key mapping
 let mapleader=","
+nmap <leader>n :set number!<CR>
 nmap <leader>x :wq<CR>
 nmap <leader>z :q!<CR>
 nmap <leader>w :NERDTreeToggle<CR>
