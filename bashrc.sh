@@ -86,10 +86,11 @@ tm() {
 }
 
 uts() {
-    if [[ $# -ne 1 ]]; then
-        return
+    if [[ $# -eq 0 ]]; then
+        date +%s
+    else
+        date +'%Y-%m-%d %H:%M:%S' -d @$1
     fi
-    date +'%Y-%m-%d %H:%M:%S' -d @$1
 }
 
 ###################################
