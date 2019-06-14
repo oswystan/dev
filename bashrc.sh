@@ -85,6 +85,13 @@ tm() {
     IFS=$OLDIFS
 }
 
+uts() {
+    if [[ $# -ne 1 ]]; then
+        return
+    fi
+    date -d @$1 +'%Y-%m-%d %H:%M:%S'
+}
+
 ###################################
 ## clone github project
 ###################################
