@@ -20,7 +20,7 @@ this is a guideline for how to create a local yum repository to speed up your yu
 $ wget -e robots=off -r -k -c -A .rpm -np http://mirrors.163.com/centos/6/sclo/x86_64/
 
 ## create index
-$ sudo yum install -y yum-utils
+$ sudo yum install -y yum-utils createrepo
 $ createrepo mirrors.163.com/centos/6/sclo/x86_64/
 
 ## install nginx for download and put the following config to a conf file
