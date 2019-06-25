@@ -9,6 +9,7 @@
 ##
 ###########################################################################
 
+[ $(id -u) -eq 0 ] && SUDO="" || SUDO="sudo"
 
 function user.add() {
     if [[ $# -ne 1 ]]; then
@@ -16,8 +17,8 @@ function user.add() {
         return 1
     fi
 
-    useradd -m -s /bin/bash -d /home/$1 $1 && \
-    echo -e "$1@123\n$1@123" | passwd $1
+    $SUDO useradd -m -s /bin/bash -d /home/$1 $1 && \
+    echo -e "$1@123\n$1@123" | $SUDO passwd $1
 }
 
 function user.del() {
@@ -25,11 +26,28 @@ function user.del() {
         echo "usage: $FUNCNAME <username>"
         return 1
     fi
-    userdel -r -f $1
+    $SUDO userdel -r -f $1
 }
 
 function user.ls() {
-    less /etc/passwd
+    $SUDO less /etc/passwd
+}
+
+function user.sudo() {
+    if [[ $# -ne 1 ]]; then
+        echo "usage: $FUNCNAME <username>"
+        return 1
+    fi
+
+    $SUDO echo "$1 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+}
+function user.sudo.del() {
+    if [[ $# -ne 1 ]]; then
+        echo "usage: $FUNCNAME <username>"
+        return 1
+    fi
+
+    $SUDO sed -i "s/^$1.*NOPASSWD.*ALL$//g" /etc/sudoers
 }
 
 ###########################################################################
