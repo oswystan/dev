@@ -102,6 +102,9 @@ $ yarn install
 $ sudo service iptables stop
 $ sudo chkconfig iptables off
 
+## enable ssh on boot
+$ sudo chkconfig sshd on
+
 ```
 
 # macos
@@ -122,4 +125,23 @@ $ sudo route add -host x.x.x.x $(gateway-ip)
 netstat -nr -f inet
 
 ```
+
+# virtualbox
+
+```shell
+## list vms
+$ vboxmanage list vms
+
+## start a vm
+$ /usr/lib/virtualbox/VirtualBoxVM --comment relay --startvm $UUID --no-startvm-errormsgbox
+
+## get ip address of vm instance
+$ vboxmanage guestproperty enumerate $vmname
+
+## run guest command in host machine
+$ vboxmanage guestcontrol $UUID --username root --password 123456 run -- /bin/ls /root/
+
+```
+
+
 
