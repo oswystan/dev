@@ -7,6 +7,8 @@
 
 install_homebrew() {
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    export HOMEBREW_NO_AUTO_UPDATE=true
+    echo 'export HOMEBREW_NO_AUTO_UPDATE=true' >> ~/.bashrc
 }
 
 install_basic() {
