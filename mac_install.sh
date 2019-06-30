@@ -9,6 +9,14 @@ install_homebrew() {
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     export HOMEBREW_NO_AUTO_UPDATE=true
     echo 'export HOMEBREW_NO_AUTO_UPDATE=true' >> ~/.bashrc
+
+    ## change brew git repo
+    cd "$(brew --repo)"
+    git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git
+    cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+    git remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git
+    #brew update
+    echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles' >> ~/.bashrc
 }
 
 install_basic() {
@@ -46,7 +54,7 @@ bugfix() {
 
 install_homebrew
 install_basic
-#install_android
-#install_db
-#install_node
+install_android
+install_db
+install_node
 
