@@ -17,10 +17,10 @@
 [color "diff"]
     plain = normal
     meta = bold
-    frag = cyan
+    frag = 123
     old = 198 bold
-    new = 154
-    commit = yellow
+    new = 48 bold
+    commit = 45
     whitespace = normal 154
 [color "branch"]
     current = 43 bold
@@ -30,10 +30,7 @@
 [color "status"]
     header = normal
     added = 154
-    updated = 81
+    updated = 85
     changed = 198
     untracked = 11
     nobranch = 242
-[user]
-	name = wangyu22
-	email = wangyu22@100tal.com
