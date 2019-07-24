@@ -39,19 +39,10 @@ fi
 ## setup git
 setup_git()
 {
+    cp gitconfig ~/.gitconfig
     git_ver=`git --version|cut -d' ' -f3`
-    git config --global core.editor "vim"
-    git config --global credential.helper "cache"
     git config --global user.name oswystan
     git config --global user.email oswystan@126.com
-    git config --global alias.st "status -s"
-    git config --global alias.ci "commit"
-    git config --global alias.co "checkout"
-    git config --global alias.br "branch"
-    git config --global alias.cl "clean -fd"
-    git config --global alias.df "diff"
-    git config --global alias.lg "log --name-status"
-    git config --global color.ui true
     [[ $ver > '1.7.10' ]] && git config --global push.default simple
 
     rm -f ~/.git-completion.sh
