@@ -8,7 +8,7 @@
 	st = status -s
 	ci = commit
 	co = checkout
-	br = branch
+	br = branch -vv
 	cl = clean -fd
 	df = diff
 	lg = log --name-status
