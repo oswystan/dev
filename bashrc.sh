@@ -28,6 +28,7 @@ if [ `uname` = "Darwin" ]; then
     alias mp="open -a 'Media Player'"
     alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
     alias lsusb="system_profiler SPUSBDataType"
+    alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
 fi
 
 ###################################
