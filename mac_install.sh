@@ -22,7 +22,7 @@ install_homebrew() {
 install_basic() {
     brew install ctags cscope git cloc sloccount dos2unix subversion
     brew install vim tmux tree wget
-    #brew install sshfs
+    brew install openconnect
 }
 
 install_android() {
