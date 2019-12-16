@@ -109,9 +109,15 @@ $ sudo chkconfig sshd on
 
 # macos
 
+## commands
 ```shell
 7z a xxx.7z xxx
 7z x xxx.7z
+```
+
+## reset password policy
+```shell
+$ pwpolicy -clearaccountpolicies
 ```
 
 ## route
