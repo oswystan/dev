@@ -7,6 +7,7 @@
 - SublimeCodeintel
 - Autofilename
 - Themr
+- Theme - Solarized Space
 
 ## colorscheme
 - MarsPeacock

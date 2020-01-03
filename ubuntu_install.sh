@@ -5,7 +5,7 @@ sudo apt-get update
 install_basic()
 {
     sudo apt-get install -y vim cscope ctags gcc g++
-    sudo apt-get install -y git subversion sloccount tmux
+    sudo apt-get install -y git subversion sloccount tmux jq
     sudo apt-get install -y manpages-posix-dev
     sudo apt-get install -y gnome-tweak-tool #unity-tweak-tool
     sudo apt-get install -y meld
