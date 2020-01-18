@@ -277,7 +277,7 @@ elif [[ $(uname) = "Darwin" ]]; then
     alias k=k_mac
 fi
 
-
+export BASH_SILENCE_DEPRECATION_WARNING=1
 export GOROOT="/usr/local/go"
 export GOPATH="$HOME/usr/go"
 export PATH="${PATH}:${GOROOT}/bin:${GOPATH}/bin"
