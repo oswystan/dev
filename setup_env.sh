@@ -10,8 +10,7 @@
 ###########################################################################
 
 ## setup vim env
-setup_vim()
-{
+setup_vim() {
     rm -f ~/.vimrc
     rm -rf ~/.vim
     ln -s $PWD/vimrc ~/.vimrc
@@ -19,8 +18,7 @@ setup_vim()
 }
 
 ## setup bashrc env
-setup_bashrc()
-{
+setup_bashrc() {
     rc_file="$PWD/bashrc.sh"
     is_exist=`grep bashrc.sh ~/.bashrc | wc -l`
     if [ $is_exist -le 0 ]; then
@@ -37,8 +35,7 @@ fi
 }
 
 ## setup git
-setup_git()
-{
+setup_git() {
     cp gitconfig ~/.gitconfig
     git_ver=`git --version|cut -d' ' -f3`
     git config --global user.name oswystan
@@ -54,14 +51,12 @@ setup_git()
 }
 
 ## setup tmux configuration
-setup_tmux()
-{
+setup_tmux() {
     rm -f ~/.tmux.conf && ln -s $PWD/tmux.conf ~/.tmux.conf
 }
 
 ## setup clang-format
-setup_clang()
-{
+setup_clang() {
     rm -f ~/.clang-format && ln -s $PWD/clang-format ~/.clang-format
 }
 
