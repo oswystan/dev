@@ -9,30 +9,28 @@
 ##
 ###########################################################################
 
-get_all_repos() {
+github.repo.ls() {
     curl -s -X GET "https://api.github.com/users/oswystan/repos?per_page=200"|jq -r '.[].name'
 }
 
-clone_repo() {
+github.repo.clone() {
     echo "===> $1"
     git clone --mirror https://github.com/oswystan/$1 repo/$1.git
     [[ $? -ne 0 ]] && exit 1
 }
 
-clone_all() {
-    repos=$(get_all_repos);
+github.repo.backup() {
+    repos=$(github.repo.ls);
     for one in ${repos}
     do
-        clone_repo $one
+        github.repo.clone $one
     done
 }
 
-check_tool() {
+github.check() {
     jq=$(which jq)
     [[ -z ${jq} ]] && echo "NO jq found" && exit 1;
 }
 
-###########################################################################
-check_tool
-clone_all
 
+###########################################################################
